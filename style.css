@@ -515,11 +515,6 @@ img, svg { display: block; }
     grid-template-columns: 1fr;
     max-width: 480px;
   }
-
-  .work__grid {
-    grid-template-columns: 1fr;
-    max-width: 560px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -635,6 +630,13 @@ img, svg { display: block; }
 
 .video-facade:hover .video-facade__play svg {
   transform: scale(1.08);
+}
+
+@media (max-width: 860px) {
+  .work__grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
 }
 
 /* ── Footer YouTube link ── */
