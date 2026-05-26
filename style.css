@@ -245,9 +245,9 @@ img, svg { display: block; }
 
 /* ── Trust strip ── */
 .trust {
-  background: var(--accent-light);
-  border-top: 1px solid var(--accent-mid);
-  border-bottom: 1px solid var(--accent-mid);
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 0;
 }
 
@@ -264,10 +264,10 @@ img, svg { display: block; }
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem 0.75rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--accent);
-  border-right: 1px solid var(--accent-mid);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  border-right: 1px solid var(--border);
   white-space: nowrap;
   line-height: 1;
 }
@@ -281,6 +281,7 @@ img, svg { display: block; }
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  color: var(--accent);
 }
 
 @media (max-width: 500px) {
