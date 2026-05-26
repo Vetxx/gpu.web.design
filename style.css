@@ -270,6 +270,7 @@ img, svg { display: block; }
 }
 
 .trust__item svg {
+  display: inline;
   width: 18px;
   height: 18px;
   color: var(--accent);
@@ -278,8 +279,12 @@ img, svg { display: block; }
 
 @media (max-width: 640px) {
   .trust__inner {
-    justify-content: flex-start;
-    gap: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+  }
+  .trust__item {
+    white-space: normal;
   }
 }
 
@@ -509,8 +514,8 @@ img, svg { display: block; }
   }
 }
 
-/* Hide nav links on all phones — logo + EN toggle is enough */
-@media (max-width: 640px) {
+/* Hide nav links only on very small phones */
+@media (max-width: 380px) {
   .nav__link { display: none; }
 }
 
