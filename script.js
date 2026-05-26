@@ -128,4 +128,17 @@
       });
   });
 
+  /* ── Copy email to clipboard ── */
+  var copyBtn  = document.getElementById('copyEmail');
+  var copyText = document.getElementById('copyEmailText');
+
+  copyBtn.addEventListener('click', function () {
+    var email = copyBtn.dataset.email;
+    navigator.clipboard.writeText(email).then(function () {
+      var prev = copyText.textContent;
+      copyText.textContent = 'Nukopijuota!';
+      setTimeout(function () { copyText.textContent = prev; }, 1800);
+    });
+  });
+
 })();
