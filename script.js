@@ -79,10 +79,10 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const name    = form.name.value.trim();
-    const email   = form.email.value.trim();
-    const message = form.message.value.trim();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var name    = form.name.value.trim();
+    var email   = form.email.value.trim();
+    var message = form.message.value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     // Clear previous error states
     [form.name, form.email, form.message].forEach(function (el) {
@@ -100,14 +100,32 @@
       return;
     }
 
-    // Build mailto link with pre-filled body
-    const subject = encodeURIComponent('gpu.lt — ' + name);
-    const body    = encodeURIComponent('Vardas / Name: ' + name + '\nEl. paštas / Email: ' + email + '\n\n' + message);
-    window.location.href = 'mailto:info@gpu.lt?subject=' + subject + '&body=' + body;
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
 
-    notice.className = 'form-notice success';
-    notice.textContent = messages[lang].success;
-    form.reset();
+    fetch('https://formspree.io/f/xgoqpljz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, message: message }),
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.ok) {
+          notice.className = 'form-notice success';
+          notice.textContent = messages[lang].success;
+          form.reset();
+        } else {
+          notice.className = 'form-notice error';
+          notice.textContent = messages[lang].error;
+        }
+      })
+      .catch(function () {
+        notice.className = 'form-notice error';
+        notice.textContent = messages[lang].error;
+      })
+      .finally(function () {
+        btn.disabled = false;
+      });
   });
 
 })();
