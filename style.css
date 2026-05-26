@@ -501,6 +501,7 @@ img, svg { display: block; }
   .hero__visual {
     display: flex;
     justify-content: center;
+    order: -1;
   }
 
   .hero__gpu {
