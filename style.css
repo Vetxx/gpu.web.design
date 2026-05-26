@@ -85,6 +85,12 @@ img, svg { display: block; }
   gap: 1.5rem;
 }
 
+.nav__btns {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
 .nav__link {
   color: var(--muted);
   text-decoration: none;
