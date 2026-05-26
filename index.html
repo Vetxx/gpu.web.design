@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Profesionalus vaizdo plokščių taisymas Lietuvoje. Diagnostika, reballing ir GPU remontas.">
-  <title>gpu.lt — Vaizdo plokščių taisymas</title>
+  <meta name="description" content="Profesionalus vaizdo plokščių remontas Lietuvoje. Diagnostika, BGA reballing ir GPU priežiūra.">
+  <title>GPU.LT — Vaizdo plokščių remontas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -23,10 +23,11 @@
           <rect x="53" y="8"  width="17" height="22" rx="2"/>
           <path d="M8 30 H27 V34 H35 V30 H48 V40 H8 Z"/>
         </svg>
-        <span class="logo__text">gpu.lt</span>
+        <span class="logo__text">GPU.LT</span>
       </a>
       <div class="nav__right">
         <a href="#services" class="nav__link" data-lt="Paslaugos"  data-en="Services">Paslaugos</a>
+        <a href="#work"     class="nav__link" data-lt="Darbai"     data-en="Work">Darbai</a>
         <a href="#contact"  class="nav__link" data-lt="Kontaktai"  data-en="Contact">Kontaktai</a>
         <button class="lang-btn" id="langToggle" aria-label="Switch language">EN</button>
       </div>
@@ -40,14 +41,14 @@
       <div class="container hero__inner">
         <div class="hero__content">
           <h1 class="hero__headline"
-              data-lt="Profesionalus vaizdo plokščių taisymas."
+              data-lt="Profesionalus vaizdo plokščių remontas."
               data-en="Professional GPU repair.">
-            Profesionalus vaizdo plokščių taisymas.
+            Profesionalus vaizdo plokščių remontas.
           </h1>
           <p class="hero__sub"
-             data-lt="Greitas, patikimas ir skaidrus remontas Lietuvoje. Diagnostika, reballing ir visa vaizdo plokščių priežiūra."
-             data-en="Fast, reliable and transparent repairs in Lithuania. Diagnostics, reballing and full GPU servicing.">
-            Greitas, patikimas ir skaidrus remontas Lietuvoje. Diagnostika, reballing ir visa vaizdo plokščių priežiūra.
+             data-lt="Greitas ir patikimas remontas Lietuvoje. Diagnostika, BGA reballing ir vaizdo plokščių priežiūra."
+             data-en="Fast and reliable repairs in Lithuania. Diagnostics, BGA reballing and GPU servicing.">
+            Greitas ir patikimas remontas Lietuvoje. Diagnostika, BGA reballing ir vaizdo plokščių priežiūra.
           </p>
           <a href="#contact" class="btn"
              data-lt="Susisiekti"
@@ -55,12 +56,11 @@
         </div>
 
         <div class="hero__visual" aria-hidden="true">
-          <!-- GPU illustration (side view, stylised) -->
+          <!-- GPU illustration: heatsink fin view, no face-like elements -->
           <svg class="hero__gpu" viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Power connectors -->
             <rect x="10" y="8"  width="42" height="28" rx="4" fill="#EEF2FF" stroke="#2563EB" stroke-width="1.5"/>
             <rect x="58" y="8"  width="42" height="28" rx="4" fill="#EEF2FF" stroke="#2563EB" stroke-width="1.5"/>
-            <!-- Power pins -->
             <rect x="16" y="14" width="7" height="16" rx="1" fill="#C7D2FE"/>
             <rect x="25" y="14" width="7" height="16" rx="1" fill="#C7D2FE"/>
             <rect x="34" y="14" width="7" height="16" rx="1" fill="#C7D2FE"/>
@@ -69,26 +69,30 @@
             <rect x="82" y="14" width="7" height="16" rx="1" fill="#C7D2FE"/>
             <!-- Main GPU body -->
             <rect x="0" y="34" width="254" height="100" rx="6" fill="#EEF2FF" stroke="#2563EB" stroke-width="2"/>
-            <!-- Fan 1 -->
-            <circle cx="78"  cy="84" r="40" fill="white"   stroke="#2563EB" stroke-width="1.5"/>
-            <circle cx="78"  cy="84" r="28" fill="#EEF2FF"  stroke="#BFDBFE" stroke-width="1.5"/>
-            <circle cx="78"  cy="84" r="10" fill="#2563EB"/>
-            <!-- Fan 2 -->
-            <circle cx="178" cy="84" r="40" fill="white"   stroke="#2563EB" stroke-width="1.5"/>
-            <circle cx="178" cy="84" r="28" fill="#EEF2FF"  stroke="#BFDBFE" stroke-width="1.5"/>
-            <circle cx="178" cy="84" r="10" fill="#2563EB"/>
+            <!-- Heatsink fin array -->
+            <rect x="10" y="43" width="234" height="82" rx="3" fill="white" stroke="#BFDBFE" stroke-width="1"/>
+            <line x1="14" y1="52"  x2="240" y2="52"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="61"  x2="240" y2="61"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="70"  x2="240" y2="70"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="79"  x2="240" y2="79"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="88"  x2="240" y2="88"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="97"  x2="240" y2="97"  stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="106" x2="240" y2="106" stroke="#C7D2FE" stroke-width="1.5"/>
+            <line x1="14" y1="115" x2="240" y2="115" stroke="#C7D2FE" stroke-width="1.5"/>
+            <!-- Heat pipes running through fins -->
+            <rect x="44"  y="34" width="8" height="100" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+            <rect x="90"  y="34" width="8" height="100" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+            <rect x="150" y="34" width="8" height="100" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+            <rect x="196" y="34" width="8" height="100" rx="4" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
             <!-- I/O bracket -->
             <rect x="252" y="34" width="68" height="100" rx="6" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
-            <!-- I/O ports -->
             <rect x="262" y="52"  width="48" height="8" rx="2" fill="#2563EB"/>
             <rect x="262" y="68"  width="48" height="8" rx="2" fill="#2563EB"/>
             <rect x="262" y="84"  width="48" height="8" rx="2" fill="#2563EB"/>
             <rect x="262" y="100" width="48" height="8" rx="2" fill="#2563EB"/>
             <!-- PCIe connector -->
             <rect x="38" y="133" width="178" height="36" rx="4" fill="#EEF2FF" stroke="#2563EB" stroke-width="1.5"/>
-            <!-- PCIe key notch -->
-            <rect x="116" y="133" width="28" height="18" rx="0" fill="white" stroke="#2563EB" stroke-width="1.5"/>
-            <!-- PCIe contacts -->
+            <rect x="116" y="133" width="28" height="18" fill="white" stroke="#2563EB" stroke-width="1.5"/>
             <line x1="48"  y1="143" x2="48"  y2="165" stroke="#BFDBFE" stroke-width="3" stroke-linecap="round"/>
             <line x1="58"  y1="143" x2="58"  y2="165" stroke="#BFDBFE" stroke-width="3" stroke-linecap="round"/>
             <line x1="68"  y1="143" x2="68"  y2="165" stroke="#BFDBFE" stroke-width="3" stroke-linecap="round"/>
@@ -114,7 +118,6 @@
         <h2 class="section-title" data-lt="Paslaugos" data-en="Services">Paslaugos</h2>
         <div class="services__grid">
 
-          <!-- GPU Repair -->
           <div class="service-card">
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -125,13 +128,12 @@
                 data-lt="Vaizdo plokščių taisymas"
                 data-en="GPU Repair">Vaizdo plokščių taisymas</h3>
             <p class="service-card__desc"
-               data-lt="Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus — nuo neveikiančių tranzistorių iki perdegusių elementų."
-               data-en="We diagnose and repair GPU faults across all brands — from failed transistors to burnt-out components.">
-              Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus — nuo neveikiančių tranzistorių iki perdegusių elementų.
+               data-lt="Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių."
+               data-en="We diagnose and repair GPU faults across all brands - from liquid damage to PCB fractures.">
+              Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių.
             </p>
           </div>
 
-          <!-- Reballing -->
           <div class="service-card">
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -157,7 +159,6 @@
             </p>
           </div>
 
-          <!-- Diagnostics -->
           <div class="service-card">
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -170,9 +171,9 @@
                 data-lt="Diagnostika"
                 data-en="Diagnostics">Diagnostika</h3>
             <p class="service-card__desc"
-               data-lt="Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą — be staigmenų."
-               data-en="Precise and fast fault diagnostics. You'll get a clear fault description and quote before any repair work — no surprises.">
-              Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą — be staigmenų.
+               data-lt="Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų."
+               data-en="Precise and fast fault diagnostics. You'll get a clear fault description and quote before any repair work - no surprises.">
+              Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų.
             </p>
           </div>
 
@@ -190,11 +191,11 @@
 
           <div class="how__step">
             <div class="how__num">1</div>
-            <h3 data-lt="Atneškite arba išsiųskite"
-                data-en="Bring in or ship">Atneškite arba išsiųskite</h3>
-            <p data-lt="Atveskite vaizdo plokštę asmeniškai arba išsiųskite paštu — pasirinkimas jūsų."
-               data-en="Drop your GPU off in person or send it by post — your choice.">
-              Atveskite vaizdo plokštę asmeniškai arba išsiųskite paštu — pasirinkimas jūsų.
+            <h3 data-lt="Perduokite arba išsiųskite"
+                data-en="Hand in or ship">Perduokite arba išsiųskite</h3>
+            <p data-lt="Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu - pasirinkimas jūsų."
+               data-en="Hand in your GPU in person or send it by post - your choice.">
+              Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu - pasirinkimas jūsų.
             </p>
           </div>
 
@@ -232,6 +233,41 @@
             </p>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Previous work ── -->
+    <section id="work" class="work">
+      <div class="container">
+        <h2 class="section-title"
+            data-lt="Darbų pavyzdžiai"
+            data-en="Work examples">Darbų pavyzdžiai</h2>
+        <div class="work__grid">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/s_Q8wMHj5fg"
+              title="GPU remontas — darbų pavyzdys 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/Y0uqj9dEq3s"
+              title="GPU remontas — darbų pavyzdys 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/t8zvqq2wqKk"
+              title="GPU remontas — darbų pavyzdys 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -300,13 +336,19 @@
   <!-- ── Footer ── -->
   <footer class="footer">
     <div class="container footer__inner">
-      <span class="footer__copy">© 2025 gpu.lt</span>
+      <span class="footer__copy">© 2025 GPU.LT</span>
+      <a href="https://youtube.com/@gpu_lt" target="_blank" rel="noopener" class="footer__yt">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+        </svg>
+        @gpu_lt
+      </a>
       <span class="footer__tagline"
-            data-lt="Vaizdo plokščių taisymas Lietuvoje"
-            data-en="GPU repair in Lithuania">Vaizdo plokščių taisymas Lietuvoje</span>
+            data-lt="Vaizdo plokščių remontas Lietuvoje"
+            data-en="GPU repair in Lithuania">Vaizdo plokščių remontas Lietuvoje</span>
     </div>
   </footer>
 
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
