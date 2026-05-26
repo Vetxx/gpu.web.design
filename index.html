@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
   <script>
     (function(){
       var t = localStorage.getItem('theme');
@@ -34,10 +34,14 @@
         <span class="logo__text">GPU.LT</span>
       </a>
       <div class="nav__right">
-        <a href="#services" class="nav__link" data-lt="Paslaugos"  data-en="Services">Paslaugos</a>
-        <a href="#contact"  class="nav__link" data-lt="Kontaktai"  data-en="Contact">Kontaktai</a>
+        <a href="#services" class="nav__link" data-lt="Paslaugos" data-en="Services" data-ru="Услуги">Paslaugos</a>
+        <a href="#contact"  class="nav__link" data-lt="Kontaktai" data-en="Contact"  data-ru="Контакты">Kontaktai</a>
         <div class="nav__btns">
-          <button class="lang-btn" id="langToggle" aria-label="Switch language">EN</button>
+          <select id="langSelect" class="lang-select" aria-label="Select language">
+            <option value="lt">LT</option>
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+          </select>
           <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
             <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -56,17 +60,20 @@
         <div class="hero__content">
           <h1 class="hero__headline"
               data-lt="Profesionalus vaizdo plokščių remontas."
-              data-en="Professional GPU repair.">
+              data-en="Professional GPU repair."
+              data-ru="Профессиональный ремонт видеокарт.">
             Profesionalus vaizdo plokščių remontas.
           </h1>
           <p class="hero__sub"
              data-lt="Greitas ir patikimas remontas Lietuvoje. Diagnostika, BGA reballing ir vaizdo plokščių priežiūra."
-             data-en="Fast and reliable repairs in Lithuania. Diagnostics, BGA reballing and GPU servicing.">
+             data-en="Fast and reliable repairs in Lithuania. Diagnostics, BGA reballing and GPU servicing."
+             data-ru="Быстрый и надёжный ремонт в Литве. Диагностика, BGA ребболинг и обслуживание видеокарт.">
             Greitas ir patikimas remontas Lietuvoje. Diagnostika, BGA reballing ir vaizdo plokščių priežiūra.
           </p>
           <a href="#contact" class="btn"
              data-lt="Susisiekti"
-             data-en="Get in touch">Susisiekti</a>
+             data-en="Get in touch"
+             data-ru="Связаться">Susisiekti</a>
         </div>
 
         <div class="hero__visual" aria-hidden="true">
@@ -142,7 +149,7 @@
     <!-- ── Services ── -->
     <section id="services" class="services">
       <div class="container">
-        <h2 class="section-title" data-lt="Paslaugos" data-en="Services">Paslaugos</h2>
+        <h2 class="section-title" data-lt="Paslaugos" data-en="Services" data-ru="Услуги">Paslaugos</h2>
         <div class="services__grid">
 
           <div class="service-card">
@@ -153,10 +160,12 @@
             </div>
             <h3 class="service-card__title"
                 data-lt="Vaizdo plokščių taisymas"
-                data-en="GPU Repair">Vaizdo plokščių taisymas</h3>
+                data-en="GPU Repair"
+                data-ru="Ремонт видеокарт">Vaizdo plokščių taisymas</h3>
             <p class="service-card__desc"
                data-lt="Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių."
-               data-en="We diagnose and repair GPU faults across all brands - from liquid damage to PCB fractures.">
+               data-en="We diagnose and repair GPU faults across all brands - from liquid damage to PCB fractures."
+               data-ru="Диагностируем и устраняем неисправности видеокарт всех брендов — от попадания жидкости до повреждений платы.">
               Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių.
             </p>
           </div>
@@ -178,10 +187,12 @@
             </div>
             <h3 class="service-card__title"
                 data-lt="Reballing / Perlitavimas"
-                data-en="Reballing / Rework">Reballing / Perlitavimas</h3>
+                data-en="Reballing / Rework"
+                data-ru="Ребболинг / Перепайка">Reballing / Perlitavimas</h3>
             <p class="service-card__desc"
                data-lt="Profesionalus BGA lustelių perlitavimas specializuota įranga. Naudojame aukštos kokybės lydmetalį ilgalaikiam patikimumui."
-               data-en="Professional BGA chip reballing with specialist equipment. We use high-quality solder for long-term reliability.">
+               data-en="Professional BGA chip reballing with specialist equipment. We use high-quality solder for long-term reliability."
+               data-ru="Профессиональный ребболинг BGA-чипов специализированным оборудованием. Используем качественный припой для долговечного результата.">
               Profesionalus BGA lustelių perlitavimas specializuota įranga. Naudojame aukštos kokybės lydmetalį ilgalaikiam patikimumui.
             </p>
           </div>
@@ -196,10 +207,12 @@
             </div>
             <h3 class="service-card__title"
                 data-lt="Diagnostika"
-                data-en="Diagnostics">Diagnostika</h3>
+                data-en="Diagnostics"
+                data-ru="Диагностика">Diagnostika</h3>
             <p class="service-card__desc"
                data-lt="Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų."
-               data-en="Precise and fast fault diagnostics. You'll get a clear fault description and quote before any repair work - no surprises.">
+               data-en="Precise and fast fault diagnostics. You'll get a clear fault description and quote before any repair work - no surprises."
+               data-ru="Точная и быстрая диагностика неисправностей. Перед ремонтом вы получите описание проблемы и стоимость работ — без сюрпризов.">
               Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų.
             </p>
           </div>
@@ -216,21 +229,21 @@
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <polyline points="9 12 11 14 15 10"/>
           </svg>
-          <span data-lt="3 mėn. garantija" data-en="3-month warranty">3 mėn. garantija</span>
+          <span data-lt="3 mėn. garantija" data-en="3-month warranty" data-ru="Гарантия 3 месяца">3 mėn. garantija</span>
         </div>
         <div class="trust__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="12" y1="1" x2="12" y2="23"/>
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
-          <span data-lt="Skaidri kainodara" data-en="Transparent pricing">Skaidri kainodara</span>
+          <span data-lt="Skaidri kainodara" data-en="Transparent pricing" data-ru="Прозрачные цены">Skaidri kainodara</span>
         </div>
         <div class="trust__item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
-          <span data-lt="Greitas aptarnavimas" data-en="Fast turnaround">Greitas aptarnavimas</span>
+          <span data-lt="Greitas aptarnavimas" data-en="Fast turnaround" data-ru="Быстрое обслуживание">Greitas aptarnavimas</span>
         </div>
       </div>
     </div>
@@ -240,15 +253,18 @@
       <div class="container">
         <h2 class="section-title"
             data-lt="Kaip tai veikia"
-            data-en="How it works">Kaip tai veikia</h2>
+            data-en="How it works"
+            data-ru="Как это работает">Kaip tai veikia</h2>
         <div class="how__steps">
 
           <div class="how__step">
             <div class="how__num">1</div>
             <h3 data-lt="Perduokite arba išsiųskite"
-                data-en="Hand in or ship">Perduokite arba išsiųskite</h3>
+                data-en="Hand in or ship"
+                data-ru="Привезите или отправьте">Perduokite arba išsiųskite</h3>
             <p data-lt="Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu - pasirinkimas jūsų."
-               data-en="Hand in your GPU in person or send it by post - your choice.">
+               data-en="Hand in your GPU in person or send it by post - your choice."
+               data-ru="Привезите видеокарту лично или отправьте по почте — как вам удобнее.">
               Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu - pasirinkimas jūsų.
             </p>
           </div>
@@ -263,9 +279,11 @@
           <div class="how__step">
             <div class="how__num">2</div>
             <h3 data-lt="Diagnostika ir sąmata"
-                data-en="Diagnosis and quote">Diagnostika ir sąmata</h3>
+                data-en="Diagnosis and quote"
+                data-ru="Диагностика и смета">Diagnostika ir sąmata</h3>
             <p data-lt="Diagnozuojame gedimą ir pateikiame skaidrią kainą. Taisymas pradedamas tik gavus jūsų sutikimą."
-               data-en="We diagnose the fault and provide a transparent quote. No work begins without your approval.">
+               data-en="We diagnose the fault and provide a transparent quote. No work begins without your approval."
+               data-ru="Диагностируем неисправность и предоставляем прозрачную смету. Работа начинается только с вашего согласия.">
               Diagnozuojame gedimą ir pateikiame skaidrią kainą. Taisymas pradedamas tik gavus jūsų sutikimą.
             </p>
           </div>
@@ -280,9 +298,11 @@
           <div class="how__step">
             <div class="how__num">3</div>
             <h3 data-lt="Remontas ir grąžinimas"
-                data-en="Repair and return">Remontas ir grąžinimas</h3>
+                data-en="Repair and return"
+                data-ru="Ремонт и возврат">Remontas ir grąžinimas</h3>
             <p data-lt="Atliekame remontą ir grąžiname plokštę patikrintą ir pilnai veikiančią."
-               data-en="We carry out the repair and return your GPU tested and fully working.">
+               data-en="We carry out the repair and return your GPU tested and fully working."
+               data-ru="Выполняем ремонт и возвращаем видеокарту протестированной и полностью рабочей.">
               Atliekame remontą ir grąžiname plokštę patikrintą ir pilnai veikiančią.
             </p>
           </div>
@@ -296,7 +316,8 @@
       <div class="container">
         <h2 class="section-title"
             data-lt="Darbų pavyzdžiai"
-            data-en="Work examples">Darbų pavyzdžiai</h2>
+            data-en="Work examples"
+            data-ru="Примеры работ">Darbų pavyzdžiai</h2>
         <div class="work__grid">
           <div class="video-embed">
             <iframe
@@ -333,10 +354,12 @@
         <div class="contact__info">
           <h2 class="section-title"
               data-lt="Susisiekite"
-              data-en="Get in touch">Susisiekite</h2>
+              data-en="Get in touch"
+              data-ru="Свяжитесь с нами">Susisiekite</h2>
           <p class="contact__sub"
              data-lt="Turite klausimų ar norite priduoti vaizdo plokštę? Parašykite arba paskambinkite."
-             data-en="Have a question or want to bring in a GPU? Write or call us.">
+             data-en="Have a question or want to bring in a GPU? Write or call us."
+             data-ru="Есть вопросы или хотите сдать видеокарту? Напишите или позвоните нам.">
             Turite klausimų ar norite priduoti vaizdo plokštę? Parašykite arba paskambinkite.
           </p>
           <div class="contact__details">
@@ -358,27 +381,29 @@
 
         <form class="contact__form" id="contactForm" novalidate>
           <div class="form-group">
-            <label for="name" data-lt="Vardas" data-en="Name">Vardas</label>
+            <label for="name" data-lt="Vardas" data-en="Name" data-ru="Имя">Vardas</label>
             <input type="text" id="name" name="name" autocomplete="name" required
-                   data-placeholder-lt="Jūsų vardas" data-placeholder-en="Your name"
+                   data-placeholder-lt="Jūsų vardas" data-placeholder-en="Your name" data-placeholder-ru="Ваше имя"
                    placeholder="Jūsų vardas">
           </div>
           <div class="form-group">
-            <label for="email" data-lt="El. paštas" data-en="Email">El. paštas</label>
+            <label for="email" data-lt="El. paštas" data-en="Email" data-ru="Эл. почта">El. paštas</label>
             <input type="email" id="email" name="email" autocomplete="email" required
-                   data-placeholder-lt="jusu@pastas.lt" data-placeholder-en="you@example.com"
+                   data-placeholder-lt="jusu@pastas.lt" data-placeholder-en="you@example.com" data-placeholder-ru="вы@example.com"
                    placeholder="jusu@pastas.lt">
           </div>
           <div class="form-group">
-            <label for="message" data-lt="Žinutė" data-en="Message">Žinutė</label>
+            <label for="message" data-lt="Žinutė" data-en="Message" data-ru="Сообщение">Žinutė</label>
             <textarea id="message" name="message" rows="4" required
                       data-placeholder-lt="Aprašykite gedimą ir GPU modelį..."
                       data-placeholder-en="Describe the fault and your GPU model..."
+                      data-placeholder-ru="Опишите неисправность и модель GPU..."
                       placeholder="Aprašykite gedimą ir GPU modelį..."></textarea>
           </div>
           <button type="submit" class="btn"
                   data-lt="Siųsti žinutę"
-                  data-en="Send message">Siųsti žinutę</button>
+                  data-en="Send message"
+                  data-ru="Отправить сообщение">Siųsti žinutę</button>
           <p class="form-notice" id="formNotice" aria-live="polite"></p>
         </form>
 
@@ -399,10 +424,11 @@
       </a>
       <span class="footer__tagline"
             data-lt="Vaizdo plokščių remontas Lietuvoje"
-            data-en="GPU repair in Lithuania">Vaizdo plokščių remontas Lietuvoje</span>
+            data-en="GPU repair in Lithuania"
+            data-ru="Ремонт видеокарт в Литве">Vaizdo plokščių remontas Lietuvoje</span>
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

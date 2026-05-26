@@ -22,7 +22,6 @@
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 
-  // Initialise icon to match the theme applied by the anti-flash script
   var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   themeIcon.innerHTML = isDark ? SUN : MOON;
 
@@ -30,49 +29,60 @@
     applyTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
   });
 
-  // Follow system preference changes only when user has no saved choice
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
     if (!localStorage.getItem('theme')) {
       applyTheme(e.matches);
     }
   });
 
-  /* ── Language toggle ── */
-  let lang = 'lt';
-  const toggle = document.getElementById('langToggle');
+  /* ── Language select ── */
+  var lang       = 'lt';
+  var langSelect = document.getElementById('langSelect');
+
+  var copyLabels = { lt: 'Nukopijuota!', en: 'Copied!', ru: 'Скопировано!' };
 
   function applyLang(newLang) {
     lang = newLang;
     document.documentElement.lang = lang;
-    toggle.textContent = lang === 'lt' ? 'EN' : 'LT';
+    langSelect.value = lang;
+    localStorage.setItem('lang', lang);
 
-    // Swap text content for all elements with data-lt / data-en
     document.querySelectorAll('[data-lt]').forEach(function (el) {
-      el.textContent = el.dataset[lang];
+      el.textContent = el.dataset[lang] || el.dataset.lt;
     });
 
-    // Swap placeholder text for inputs / textareas
     document.querySelectorAll('[data-placeholder-lt]').forEach(function (el) {
-      el.placeholder = lang === 'lt' ? el.dataset.placeholderLt : el.dataset.placeholderEn;
+      el.placeholder = el.dataset['placeholder' + lang.charAt(0).toUpperCase() + lang.slice(1)]
+                    || el.dataset.placeholderLt;
     });
   }
 
-  toggle.addEventListener('click', function () {
-    applyLang(lang === 'lt' ? 'en' : 'lt');
+  langSelect.addEventListener('change', function () {
+    applyLang(langSelect.value);
   });
 
-  /* ── Contact form ── */
-  const form    = document.getElementById('contactForm');
-  const notice  = document.getElementById('formNotice');
+  // Restore saved language preference
+  var savedLang = localStorage.getItem('lang');
+  if (savedLang && ['lt', 'en', 'ru'].indexOf(savedLang) !== -1) {
+    applyLang(savedLang);
+  }
 
-  const messages = {
+  /* ── Contact form ── */
+  var form   = document.getElementById('contactForm');
+  var notice = document.getElementById('formNotice');
+
+  var messages = {
     lt: {
       success: 'Žinutė išsiųsta. Susisieksime kuo greičiau!',
       error:   'Prašome užpildyti visus laukus.',
     },
     en: {
-      success: 'Message sent. We\'ll get back to you shortly!',
+      success: "Message sent. We'll get back to you shortly!",
       error:   'Please fill in all fields.',
+    },
+    ru: {
+      success: 'Сообщение отправлено. Свяжемся с вами в ближайшее время!',
+      error:   'Пожалуйста, заполните все поля.',
     },
   };
 
@@ -84,7 +94,6 @@
     var message = form.message.value.trim();
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    // Clear previous error states
     [form.name, form.email, form.message].forEach(function (el) {
       el.classList.remove('error');
     });
@@ -133,10 +142,9 @@
   var copyText = document.getElementById('copyEmailText');
 
   copyBtn.addEventListener('click', function () {
-    var email = copyBtn.dataset.email;
-    navigator.clipboard.writeText(email).then(function () {
+    navigator.clipboard.writeText(copyBtn.dataset.email).then(function () {
       var prev = copyText.textContent;
-      copyText.textContent = 'Nukopijuota!';
+      copyText.textContent = copyLabels[lang] || copyLabels.lt;
       setTimeout(function () { copyText.textContent = prev; }, 1800);
     });
   });
