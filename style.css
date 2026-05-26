@@ -82,7 +82,7 @@ img, svg { display: block; }
 .nav__right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nav__btns {
