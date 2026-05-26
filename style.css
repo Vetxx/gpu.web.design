@@ -492,9 +492,19 @@ img, svg { display: block; }
     gap: 0;
   }
 
-  /* Hide illustration on mobile — headline first, clean layout */
+  /* Stack hero vertically on mobile, illustration below text */
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .hero__visual {
-    display: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__gpu {
+    max-width: 280px;
   }
 
   .how__steps {
