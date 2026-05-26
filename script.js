@@ -73,18 +73,24 @@
 
   var messages = {
     lt: {
-      success: 'Žinutė išsiųsta. Susisieksime kuo greičiau!',
-      error:   'Prašome užpildyti visus laukus.',
+      success:  'Žinutė išsiųsta. Susisieksime kuo greičiau!',
+      error:    'Prašome užpildyti visus laukus (žinutė — bent 10 simbolių).',
+      cooldown: 'Prašome palaukti prieš siunčiant dar kartą.',
     },
     en: {
-      success: "Message sent. We'll get back to you shortly!",
-      error:   'Please fill in all fields.',
+      success:  "Message sent. We'll get back to you shortly!",
+      error:    'Please fill in all fields (message — at least 10 characters).',
+      cooldown: 'Please wait before sending another message.',
     },
     ru: {
-      success: 'Сообщение отправлено. Свяжемся с вами в ближайшее время!',
-      error:   'Пожалуйста, заполните все поля.',
+      success:  'Сообщение отправлено. Свяжемся с вами в ближайшее время!',
+      error:    'Пожалуйста, заполните все поля (сообщение — не менее 10 символов).',
+      cooldown: 'Пожалуйста, подождите перед повторной отправкой.',
     },
   };
+
+  var COOLDOWN_MS = 60000; // 60 s between submissions
+  var lastSent    = 0;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -93,6 +99,7 @@
     var email   = form.email.value.trim();
     var message = form.message.value.trim();
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    var msgOk   = message.length >= 10;
 
     [form.name, form.email, form.message].forEach(function (el) {
       el.classList.remove('error');
@@ -100,12 +107,19 @@
     notice.className = 'form-notice';
     notice.textContent = '';
 
-    if (!name || !email || !message || !emailOk) {
+    if (!name || !email || !message || !emailOk || !msgOk) {
       if (!name)    form.name.classList.add('error');
       if (!emailOk) form.email.classList.add('error');
-      if (!message) form.message.classList.add('error');
+      if (!msgOk)   form.message.classList.add('error');
       notice.className = 'form-notice error';
       notice.textContent = messages[lang].error;
+      return;
+    }
+
+    // Client-side cooldown — soft rate-limit (60 s)
+    if (Date.now() - lastSent < COOLDOWN_MS) {
+      notice.className = 'form-notice error';
+      notice.textContent = messages[lang].cooldown;
       return;
     }
 
@@ -120,6 +134,7 @@
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data.ok) {
+          lastSent = Date.now();
           notice.className = 'form-notice success';
           notice.textContent = messages[lang].success;
           form.reset();
@@ -146,6 +161,44 @@
       var prev = copyText.textContent;
       copyText.textContent = copyLabels[lang] || copyLabels.lt;
       setTimeout(function () { copyText.textContent = prev; }, 1800);
+    });
+  });
+
+  /* ── Nav scroll shadow ── */
+  var nav = document.querySelector('.nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  /* ── Scroll-reveal (IntersectionObserver) ── */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if (revealEls.length && window.IntersectionObserver) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    // Fallback: show immediately (older browsers / reduced-motion handled by CSS)
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ── YouTube facade (load iframe only on click) ── */
+  document.querySelectorAll('.video-facade').forEach(function (facade) {
+    facade.querySelector('.video-facade__play').addEventListener('click', function () {
+      var id = facade.dataset.yt;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = facade.querySelector('img').alt;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.setAttribute('allowfullscreen', '');
+      facade.classList.remove('video-facade');
+      facade.innerHTML = '';
+      facade.appendChild(iframe);
     });
   });
 

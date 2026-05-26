@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
   <script>
     (function(){
       var t = localStorage.getItem('theme');
@@ -79,6 +79,24 @@
         <div class="hero__visual" aria-hidden="true">
           <!-- GPU illustration: dual-fan cooler, front view -->
           <svg class="hero__gpu" viewBox="0 0 400 215" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <!-- Fan template reused for both fans via <use> -->
+              <g id="gpu-fan">
+                <circle cx="0" cy="0" r="70" fill="var(--white)"  stroke="var(--accent)" stroke-width="2"/>
+                <circle cx="0" cy="0" r="62" fill="none"   stroke="var(--accent-muted)" stroke-width="1"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(40)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(80)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(120)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(160)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(200)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(240)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(280)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(320)"/>
+                <circle r="18" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/>
+                <circle r="8"  fill="var(--accent)"/>
+              </g>
+            </defs>
             <!-- PCIe retention clip at top-left -->
             <rect x="2" y="2" width="32" height="12" rx="3" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="2"/>
             <!-- PCIe bracket (vertical strip) -->
@@ -97,41 +115,9 @@
             <line x1="20" y1="26" x2="394" y2="26" stroke="var(--accent)" stroke-width="1.5"/>
             <!-- Centre divider between fans -->
             <line x1="207" y1="8" x2="207" y2="192" stroke="var(--accent-mid)" stroke-width="1.5"/>
-
-            <!-- ── FAN 1 — centre (113, 110) ── -->
-            <circle cx="113" cy="110" r="70" fill="var(--white)"  stroke="var(--accent)" stroke-width="2"/>
-            <circle cx="113" cy="110" r="62" fill="none"   stroke="var(--accent-muted)" stroke-width="1"/>
-            <g transform="translate(113,110)">
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(40)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(80)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(120)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(160)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(200)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(240)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(280)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(320)"/>
-              <circle r="18" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/>
-              <circle r="8"  fill="var(--accent)"/>
-            </g>
-
-            <!-- ── FAN 2 — centre (301, 110) ── -->
-            <circle cx="301" cy="110" r="70" fill="var(--white)"  stroke="var(--accent)" stroke-width="2"/>
-            <circle cx="301" cy="110" r="62" fill="none"   stroke="var(--accent-muted)" stroke-width="1"/>
-            <g transform="translate(301,110)">
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(40)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(80)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(120)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(160)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(200)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(240)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(280)"/>
-              <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(320)"/>
-              <circle r="18" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/>
-              <circle r="8"  fill="var(--accent)"/>
-            </g>
-
+            <!-- Fans (reused from <defs>) -->
+            <use href="#gpu-fan" transform="translate(113,110)"/>
+            <use href="#gpu-fan" transform="translate(301,110)"/>
             <!-- 8-pin power connector (bottom right) -->
             <rect x="300" y="192" width="84" height="16" rx="3" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.5"/>
             <rect x="306" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
@@ -152,7 +138,7 @@
         <h2 class="section-title" data-lt="Paslaugos" data-en="Services" data-ru="Услуги">Paslaugos</h2>
         <div class="services__grid">
 
-          <div class="service-card">
+          <div class="service-card" data-reveal>
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -170,7 +156,7 @@
             </p>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" data-reveal>
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -197,7 +183,7 @@
             </p>
           </div>
 
-          <div class="service-card">
+          <div class="service-card" data-reveal>
             <div class="service-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="7"/>
@@ -255,7 +241,7 @@
             data-lt="Kaip tai veikia"
             data-en="How it works"
             data-ru="Как это работает">Kaip tai veikia</h2>
-        <div class="how__steps">
+        <div class="how__steps" data-reveal>
 
           <div class="how__step">
             <div class="how__num">1</div>
@@ -319,29 +305,35 @@
             data-en="Work examples"
             data-ru="Примеры работ">Darbų pavyzdžiai</h2>
         <div class="work__grid">
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/s_Q8wMHj5fg"
-              title="GPU remontas — darbų pavyzdys 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"></iframe>
+          <div class="video-embed video-facade" data-reveal data-yt="s_Q8wMHj5fg">
+            <img src="https://i.ytimg.com/vi/s_Q8wMHj5fg/hqdefault.jpg"
+                 alt="GPU remontas — darbų pavyzdys 1" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/>
+                <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+              </svg>
+            </button>
           </div>
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/Y0uqj9dEq3s"
-              title="GPU remontas — darbų pavyzdys 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"></iframe>
+          <div class="video-embed video-facade" data-reveal data-yt="Y0uqj9dEq3s">
+            <img src="https://i.ytimg.com/vi/Y0uqj9dEq3s/hqdefault.jpg"
+                 alt="GPU remontas — darbų pavyzdys 2" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/>
+                <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+              </svg>
+            </button>
           </div>
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/t8zvqq2wqKk"
-              title="GPU remontas — darbų pavyzdys 3"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"></iframe>
+          <div class="video-embed video-facade" data-reveal data-yt="t8zvqq2wqKk">
+            <img src="https://i.ytimg.com/vi/t8zvqq2wqKk/hqdefault.jpg"
+                 alt="GPU remontas — darbų pavyzdys 3" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/>
+                <path d="M27 34l18-10-18-10v20z" fill="#fff"/>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -349,7 +341,7 @@
 
     <!-- ── Contact ── -->
     <section id="contact" class="contact">
-      <div class="container contact__inner">
+      <div class="container contact__inner" data-reveal>
 
         <div class="contact__info">
           <h2 class="section-title"
@@ -394,12 +386,14 @@
           </div>
           <div class="form-group">
             <label for="message" data-lt="Žinutė" data-en="Message" data-ru="Сообщение">Žinutė</label>
-            <textarea id="message" name="message" rows="4" required
+            <textarea id="message" name="message" rows="4" required minlength="10"
                       data-placeholder-lt="Aprašykite gedimą ir GPU modelį..."
                       data-placeholder-en="Describe the fault and your GPU model..."
                       data-placeholder-ru="Опишите неисправность и модель GPU..."
                       placeholder="Aprašykite gedimą ir GPU modelį..."></textarea>
           </div>
+          <!-- Honeypot: bots fill this, humans don't see it -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <button type="submit" class="btn"
                   data-lt="Siųsti žinutę"
                   data-en="Send message"
@@ -429,6 +423,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
