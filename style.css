@@ -243,6 +243,46 @@ img, svg { display: block; }
   line-height: 1.7;
 }
 
+/* ── Trust strip ── */
+.trust {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  background: var(--white);
+}
+
+.trust__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.trust__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.trust__item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .trust__inner {
+    justify-content: flex-start;
+    gap: 1rem 2rem;
+  }
+}
+
 /* ── How it works ── */
 .how {
   padding: 5rem 0;
