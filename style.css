@@ -16,6 +16,7 @@
   --border:       #E5E7EB;
   --surface:      #F9FAFB;
   --white:        #FFFFFF;
+  --nav-bg:       rgba(255, 255, 255, 0.9);
   --radius:       12px;
   --max-w:        1100px;
 }
@@ -48,7 +49,7 @@ img, svg { display: block; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -588,4 +589,59 @@ img, svg { display: block; }
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+/* ── Theme toggle button ── */
+.theme-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.theme-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-btn svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+/* ── Dark mode ── */
+[data-theme="dark"] {
+  --accent:       #60A5FA;
+  --accent-dark:  #93C5FD;
+  --accent-light: #1e3a5f;
+  --accent-mid:   #3B82F6;
+  --accent-muted: #1e3a8a;
+  --text:         #F1F5F9;
+  --muted:        #94A3B8;
+  --border:       #334155;
+  --surface:      #0F172A;
+  --white:        #1E293B;
+  --nav-bg:       rgba(15, 23, 42, 0.92);
+}
+
+[data-theme="dark"] .hero__gpu {
+  filter: drop-shadow(0 12px 40px rgba(96, 165, 250, 0.2));
+}
+
+[data-theme="dark"] .service-card:hover {
+  box-shadow: 0 8px 32px rgba(96, 165, 250, 0.12);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
 }
