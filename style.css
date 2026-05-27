@@ -539,6 +539,11 @@ img, svg { display: block; }
 }
 
 @media (max-width: 768px) {
+  /* Tighten nav right padding so the moon button sits closer to the
+     screen edge, freeing space between the logo and nav links */
+  .nav .container {
+    padding-right: 0.75rem;
+  }
   .hero {
     padding: 3rem 0 2.5rem;
   }
