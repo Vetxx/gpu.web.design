@@ -79,7 +79,7 @@ img, svg { display: block; }
 }
 
 .logo__img {
-  height: 48px;
+  height: 53px;
   width: auto;
   display: block;
 }
@@ -642,7 +642,7 @@ img, svg { display: block; }
 
   /* Larger logo on mobile */
   .logo__img {
-    height: 48px;
+    height: 53px;
   }
 
   /* Tighten gap between nav items so spacing looks even across the bar */
