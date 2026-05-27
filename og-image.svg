@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background radial gradient -->
+    <radialGradient id="bg" cx="600" cy="315" r="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#DCE9FF"/>
+      <stop offset="60%"  stop-color="#EDF3FF"/>
+      <stop offset="100%" stop-color="#F5F8FF"/>
+    </radialGradient>
+
+    <!-- Card glow -->
+    <filter id="glow" x="-8%" y="-8%" width="116%" height="116%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Fan unit: 7 swept blades + rings + hub, centred at 0,0 -->
+    <g id="fan">
+      <!-- Outer housing ring -->
+      <circle r="163" fill="#E2EEFF" stroke="#3B5EDB" stroke-width="2.8"/>
+      <!-- Inner guide ring -->
+      <circle r="152" fill="none" stroke="#7BA4E8" stroke-width="1.6"/>
+      <!-- 7 blade paths, each rotated 51.43° -->
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(51.43)"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(102.86)"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(154.29)"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(205.71)"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(257.14)"/>
+      <path d="M16,-32 C35,-75 70,-128 62,-150 C54,-162 24,-160 5,-142 C-14,-124 -6,-70 16,-32 Z"
+            fill="#C4D8F8" stroke="#3B5EDB" stroke-width="2" stroke-linejoin="round" transform="rotate(308.57)"/>
+      <!-- Hub outer -->
+      <circle r="34" fill="#DCE9FF" stroke="#3B5EDB" stroke-width="2.5"/>
+      <!-- Hub inner -->
+      <circle r="22" fill="#F4F8FF" stroke="#3B5EDB" stroke-width="2"/>
+      <!-- Centre bearing dot -->
+      <circle r="10" fill="#3B5EDB"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- ── PCIe bracket ── -->
+  <!-- Top retention clip -->
+  <rect x="186" y="124" width="50" height="20" rx="4"
+        fill="#CDDAF5" stroke="#3B5EDB" stroke-width="2.5"/>
+  <!-- Main bracket strip -->
+  <rect x="186" y="140" width="30" height="358" rx="5"
+        fill="#CDDAF5" stroke="#3B5EDB" stroke-width="2.5"/>
+  <!-- I/O cutouts (5 slots) -->
+  <rect x="190" y="190" width="20" height="26" rx="3" fill="#3B5EDB"/>
+  <rect x="190" y="228" width="20" height="26" rx="3" fill="#3B5EDB"/>
+  <rect x="190" y="266" width="20" height="26" rx="3" fill="#3B5EDB"/>
+  <rect x="190" y="304" width="20" height="26" rx="3" fill="#3B5EDB"/>
+  <rect x="190" y="342" width="20" height="26" rx="3" fill="#3B5EDB"/>
+
+  <!-- ── Main cooler shroud ── -->
+  <rect x="212" y="124" width="800" height="382" rx="18"
+        fill="#D6E6FF" stroke="#3B5EDB" stroke-width="2.8"/>
+
+  <!-- Top accent strip -->
+  <rect x="212" y="124" width="800" height="30" rx="18" fill="#BDD0F5"/>
+  <rect x="212" y="146" width="800" height="8"  fill="#BDD0F5"/>
+  <line x1="212" y1="154" x2="1012" y2="154" stroke="#3B5EDB" stroke-width="1.8"/>
+
+  <!-- Centre divider -->
+  <line x1="612" y1="126" x2="612" y2="504" stroke="#3B5EDB" stroke-width="2.2"/>
+
+  <!-- ── Fans ── -->
+  <use href="#fan" transform="translate(415, 323)"/>
+  <use href="#fan" transform="translate(809, 323)"/>
+
+  <!-- ── 8-pin power connector ── -->
+  <rect x="812" y="506" width="160" height="24" rx="4"
+        fill="#BDD0F5" stroke="#3B5EDB" stroke-width="2.2"/>
+  <rect x="819" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="837" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="855" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="873" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="891" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="909" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="927" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+  <rect x="945" y="511" width="13" height="13" rx="2" fill="#3B5EDB"/>
+</svg>
