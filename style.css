@@ -605,6 +605,19 @@ img, svg { display: block; }
   color: var(--muted);
 }
 
+.footer__address-row {
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+.footer__address {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 
 /* ── Responsive ── */
 @media (max-width: 860px) {
