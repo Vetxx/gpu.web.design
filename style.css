@@ -84,10 +84,10 @@ img, svg { display: block; }
   display: block;
 }
 
-.logo__img--dark { display: none; }
-
-[data-theme="dark"] .logo__img--light { display: none; }
-[data-theme="dark"] .logo__img--dark  { display: block; }
+/* Dark mode: blue → white via CSS filter (no second image needed) */
+[data-theme="dark"] .logo__img {
+  filter: brightness(0) invert(1);
+}
 
 .nav__right {
   display: flex;
