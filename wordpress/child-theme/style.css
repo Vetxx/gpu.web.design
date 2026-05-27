@@ -1,0 +1,212 @@
+/*
+ Theme Name:   GPU.LT Child
+ Theme URI:    https://gpu.lt
+ Description:  Child theme for Hello Elementor — GPU.LT brand styles, dark mode, custom components.
+ Author:       GPU.LT
+ Template:     hello-elementor
+ Version:      1.0.0
+ Text Domain:  gpu-lt-child
+*/
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design tokens ── */
+:root {
+  --accent:       #2563EB;
+  --accent-dark:  #1D4ED8;
+  --accent-light: #EEF2FF;
+  --accent-mid:   #BFDBFE;
+  --accent-muted: #DBEAFE;
+  --text:         #111827;
+  --muted:        #6B7280;
+  --border:       #E5E7EB;
+  --surface:      #F9FAFB;
+  --white:        #FFFFFF;
+  --nav-bg:       rgba(255, 255, 255, 0.9);
+  --radius:       12px;
+  --max-w:        1100px;
+}
+
+/* ── Dark mode tokens ── */
+[data-theme="dark"] {
+  --text:    #F1F5F9;
+  --muted:   #94A3B8;
+  --border:  #1E293B;
+  --surface: #0F172A;
+  --white:   #1E293B;
+  --nav-bg:  rgba(15, 23, 42, 0.92);
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* ── Nav store button (Prekės) ── */
+.nav__store-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: #fff !important;
+  border: 1.5px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.1rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.nav__store-btn:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+/* ── Logo ── */
+.site-logo img,
+.custom-logo {
+  height: 53px;
+  width: auto;
+}
+[data-theme="dark"] .site-logo img,
+[data-theme="dark"] .custom-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* ── Theme toggle button ── */
+.theme-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.3rem;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+.theme-btn:hover { color: var(--accent); border-color: var(--accent); }
+.theme-btn svg { width: 18px; height: 18px; display: block; }
+
+/* ── Trust strip items ── */
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.trust-item svg { color: var(--accent); width: 15px; height: 15px; }
+
+/* ── Section titles ── */
+.section-title {
+  font-size: clamp(1.625rem, 3vw, 2.125rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+}
+
+/* ── Primary button ── */
+.btn-primary,
+.elementor-button-wrapper .elementor-button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.875rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.btn-primary:hover,
+.elementor-button-wrapper .elementor-button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ── Service cards ── */
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  border-color: var(--accent-mid);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.07);
+}
+.service-card__icon {
+  width: 44px; height: 44px;
+  background: var(--accent-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+.service-card__icon svg { width: 22px; height: 22px; }
+.service-card__title { font-weight: 700; font-size: 1.0625rem; margin-bottom: 0.5rem; color: var(--text); }
+.service-card__desc  { font-size: 0.9375rem; color: var(--muted); line-height: 1.7; }
+
+/* ── Scroll offset for sticky nav ── */
+#services, #work, #faq, #contact {
+  scroll-margin-top: 72px;
+}
+
+/* ── Contact details ── */
+.contact__detail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+.contact__detail:hover { color: var(--accent); }
+.contact__detail svg { width: 18px; height: 18px; color: var(--accent); }
+.contact__detail--static { cursor: default; color: var(--muted); }
+.contact__detail--static:hover { color: var(--muted); }
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.footer__address {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .site-logo img, .custom-logo { height: 53px; }
+}
