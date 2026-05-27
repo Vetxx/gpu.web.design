@@ -1,0 +1,347 @@
+<?php
+/**
+ * Template Name: GPU.LT Home
+ * Description: Full GPU.LT single-page site — no Elementor needed.
+ */
+?><!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profesionalus vaizdo plokščių remontas Lietuvoje. Diagnostika, BGA litavimas ir GPU priežiūra. Greitas aptarnavimas, ilgametė patirtis ir 3 mėn. garantija.">
+  <title>GPU.LT — Vaizdo plokščių remontas</title>
+  <meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Load CSS + JS directly from the live static site -->
+  <link rel="stylesheet" href="https://vetxx.github.io/gpu.web.design/style.css?v=40">
+  <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="logo">
+        <img src="https://vetxx.github.io/gpu.web.design/logo-light.png" alt="GPU.LT" class="logo__img">
+      </a>
+      <div class="nav__right">
+        <a href="https://e.gpu.lt" target="_blank" rel="noopener"
+           class="nav__link nav__store-btn"
+           data-lt="Prekės" data-en="Shop" data-ru="Товары">Prekės</a>
+        <a href="#contact" class="nav__link" data-lt="Kontaktai" data-en="Contact" data-ru="Контакты">Kontaktai</a>
+        <div class="nav__btns">
+          <select id="langSelect" class="lang-select" aria-label="Select language">
+            <option value="lt">LT</option>
+            <option value="en">EN</option>
+            <option value="ru">RU</option>
+          </select>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__headline"
+              data-lt="Profesionalus vaizdo plokščių remontas."
+              data-en="Professional GPU repair."
+              data-ru="Профессиональный ремонт видеокарт.">
+            Profesionalus vaizdo plokščių remontas.
+          </h1>
+          <p class="hero__sub"
+             data-lt="Greitas ir patikimas PC komponentų remontas Lietuvoje. Diagnostika, BGA litavimas, bei vaizdo plokščių aptarnavimas."
+             data-en="Fast and reliable PC component repairs in Lithuania. Diagnostics, BGA soldering and GPU servicing."
+             data-ru="Быстрый и надёжный ремонт PC-комплектующих в Литве. Диагностика, BGA пайка и обслуживание видеокарт.">
+            Greitas ir patikimas PC komponentų remontas Lietuvoje. Diagnostika, BGA litavimas, bei vaizdo plokščių aptarnavimas.
+          </p>
+          <a href="#contact" class="btn" data-lt="Susisiekti" data-en="Get in touch" data-ru="Связаться">Susisiekti</a>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <svg class="hero__gpu" viewBox="0 0 400 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <g id="gpu-fan">
+                <circle cx="0" cy="0" r="70" fill="var(--white)" stroke="var(--accent)" stroke-width="2"/>
+                <circle cx="0" cy="0" r="62" fill="none" stroke="var(--accent-muted)" stroke-width="1"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(40)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(80)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(120)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(160)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(200)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(240)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(280)"/>
+                <path d="M 5,-16 C 15,-32 30,-55 22,-64 C 12,-70 -8,-65 -20,-54 C -12,-42 -5,-26 5,-16 Z" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round" transform="rotate(320)"/>
+                <circle r="18" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="1.5"/>
+                <circle r="8" fill="var(--accent)"/>
+              </g>
+            </defs>
+            <rect x="2" y="2" width="32" height="12" rx="3" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="2"/>
+            <rect x="2" y="10" width="22" height="196" rx="3" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2"/>
+            <rect x="5" y="50" width="15" height="9" rx="1.5" fill="var(--accent)"/>
+            <rect x="5" y="68" width="15" height="9" rx="1.5" fill="var(--accent)"/>
+            <rect x="5" y="85" width="15" height="7" rx="1" fill="var(--accent)"/>
+            <rect x="5" y="101" width="15" height="7" rx="1" fill="var(--accent)"/>
+            <rect x="5" y="117" width="15" height="9" rx="1.5" fill="var(--accent)"/>
+            <rect x="20" y="6" width="374" height="188" rx="10" fill="var(--accent-light)" stroke="var(--accent)" stroke-width="2"/>
+            <rect x="20" y="6" width="374" height="20" rx="10" fill="var(--accent-muted)" stroke="none"/>
+            <rect x="20" y="16" width="374" height="10" rx="0" fill="var(--accent-muted)" stroke="none"/>
+            <line x1="20" y1="26" x2="394" y2="26" stroke="var(--accent)" stroke-width="1.5"/>
+            <line x1="207" y1="8" x2="207" y2="192" stroke="var(--accent-mid)" stroke-width="1.5"/>
+            <use href="#gpu-fan" transform="translate(113,110)"/>
+            <use href="#gpu-fan" transform="translate(301,110)"/>
+            <rect x="300" y="192" width="84" height="16" rx="3" fill="var(--accent-muted)" stroke="var(--accent)" stroke-width="1.5"/>
+            <rect x="306" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="317" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="328" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="339" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="350" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="361" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+            <rect x="372" y="195" width="8" height="9" rx="1" fill="var(--accent)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services ── -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title" data-lt="Paslaugos" data-en="Services" data-ru="Услуги">Paslaugos</h2>
+        <div class="services__grid">
+          <div class="service-card" data-reveal>
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-lt="Vaizdo plokščių taisymas" data-en="GPU Repair" data-ru="Ремонт видеокарт">Vaizdo plokščių taisymas</h3>
+            <p class="service-card__desc" data-lt="Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių." data-en="We diagnose and repair GPU faults across all brands - from liquid damage to PCB fractures." data-ru="Диагностируем и устраняем неисправности видеокарт всех брендов — от попадания жидкости до повреждений платы.">Diagnozuojame ir taisome visų gamintojų vaizdo plokčių gedimus - nuo apliejimų skysčiais iki PCB lūžių.</p>
+          </div>
+          <div class="service-card" data-reveal>
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="16" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="8" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="16" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-lt="Reballing / Perlitavimas" data-en="Reballing / Rework" data-ru="Ребболинг / Перепайка">Reballing / Perlitavimas</h3>
+            <p class="service-card__desc" data-lt="Profesionalus BGA lustų perlitavimas specializuota įranga." data-en="Professional BGA chip reballing with specialist equipment." data-ru="Профессиональный ребболинг BGA-чипов специализированным оборудованием.">Profesionalus BGA lustų perlitavimas specializuota įranga.</p>
+          </div>
+          <div class="service-card" data-reveal>
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+                <polyline points="8 11 11 14 14 10"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-lt="Diagnostika" data-en="Diagnostics" data-ru="Диагностика">Diagnostika</h3>
+            <p class="service-card__desc" data-lt="Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų." data-en="Precise and fast fault diagnostics. You'll get a clear fault description and quote before any repair work - no surprises." data-ru="Точная и быстрая диагностика неисправностей. Перед ремонтом вы получите описание проблемы и стоимость работ — без сюрпризов.">Tiksli ir greita gedimų diagnostika. Gausite aiškų gedimo aprašymą ir kainą prieš bet kokį taisymą - be staigmenų.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Trust strip ── -->
+    <div class="trust">
+      <div class="container trust__inner">
+        <div class="trust__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+          <span data-lt="3 mėn. garantija" data-en="3-month warranty" data-ru="Гарантия 3 месяца">3 mėn. garantija</span>
+        </div>
+        <div class="trust__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+          <span data-lt="Ilgametė patirtis" data-en="Years of experience" data-ru="Многолетний опыт">Ilgametė patirtis</span>
+        </div>
+        <div class="trust__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span data-lt="1–2 darbo dienos" data-en="1–2 business days" data-ru="1–2 рабочих дня">1–2 darbo dienos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── How it works ── -->
+    <section class="how">
+      <div class="container">
+        <h2 class="section-title" data-lt="Kaip tai veikia" data-en="How it works" data-ru="Как это работает">Kaip tai veikia</h2>
+        <div class="how__steps" data-reveal>
+          <div class="how__step">
+            <div class="how__num">1</div>
+            <h3 data-lt="Perduokite arba išsiųskite" data-en="Hand in or ship" data-ru="Привезите или отправьте">Perduokite arba išsiųskite</h3>
+            <p data-lt="Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu." data-en="Hand in your GPU in person or send it by post." data-ru="Привезите видеокарту лично или отправьте по почте.">Perduokite vaizdo plokštę asmeniškai arba išsiųskite paštu.</p>
+          </div>
+          <div class="how__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+          <div class="how__step">
+            <div class="how__num">2</div>
+            <h3 data-lt="Diagnostika ir sąmata" data-en="Diagnosis and quote" data-ru="Диагностика и смета">Diagnostika ir sąmata</h3>
+            <p data-lt="Diagnozuojame gedimą ir pateikiame skaidrią kainą. Taisymas pradedamas tik gavus jūsų sutikimą." data-en="We diagnose the fault and provide a transparent quote. No work begins without your approval." data-ru="Диагностируем неисправность и предоставляем прозрачную смету. Работа начинается только с вашего согласия.">Diagnozuojame gedimą ir pateikiame skaidrią kainą. Taisymas pradedamas tik gavus jūsų sutikimą.</p>
+          </div>
+          <div class="how__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+          <div class="how__step">
+            <div class="how__num">3</div>
+            <h3 data-lt="Remontas ir grąžinimas" data-en="Repair and return" data-ru="Ремонт и возврат">Remontas ir grąžinimas</h3>
+            <p data-lt="Atliekame remontą ir grąžiname plokštę patikrintą ir pilnai veikiančią." data-en="We carry out the repair and return your GPU tested and fully working." data-ru="Выполняем ремонт и возвращаем видеокарту протестированной и полностью рабочей.">Atliekame remontą ir grąžiname plokštę patikrintą ir pilnai veikiančią.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Work examples ── -->
+    <section id="work" class="work">
+      <div class="container">
+        <h2 class="section-title" data-lt="Darbų pavyzdžiai" data-en="Work examples" data-ru="Примеры работ">Darbų pavyzdžiai</h2>
+        <div class="work__grid">
+          <div class="video-embed video-facade" data-reveal data-yt="s_Q8wMHj5fg">
+            <img src="https://i.ytimg.com/vi/s_Q8wMHj5fg/hqdefault.jpg" alt="GPU remontas 1" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+            </button>
+          </div>
+          <div class="video-embed video-facade" data-reveal data-yt="Y0uqj9dEq3s">
+            <img src="https://i.ytimg.com/vi/Y0uqj9dEq3s/hqdefault.jpg" alt="GPU remontas 2" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+            </button>
+          </div>
+          <div class="video-embed video-facade" data-reveal data-yt="t8zvqq2wqKk">
+            <img src="https://i.ytimg.com/vi/t8zvqq2wqKk/hqdefault.jpg" alt="GPU remontas 3" loading="lazy">
+            <button class="video-facade__play" aria-label="Žiūrėti vaizdo įrašą">
+              <svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.8.1 34 0 34 0S12.2.1 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 12.5 0 24 0 24s0 11.5 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.2 47.9 34 48 34 48s21.8-.1 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35.5 68 24 68 24s0-11.5-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="section-title" data-lt="Dažni klausimai" data-en="FAQ" data-ru="Частые вопросы">Dažni klausimai</h2>
+        <div class="faq__list">
+          <details class="faq__item" data-reveal>
+            <summary class="faq__q" data-lt="Kiek kainuoja diagnostika?" data-en="How much does diagnostics cost?" data-ru="Сколько стоит диагностика?">Kiek kainuoja diagnostika?</summary>
+            <p class="faq__a" data-lt="—" data-en="—" data-ru="—">—</p>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary class="faq__q" data-lt="Kiek laiko trunka remontas?" data-en="How long does repair take?" data-ru="Сколько времени занимает ремонт?">Kiek laiko trunka remontas?</summary>
+            <p class="faq__a" data-lt="—" data-en="—" data-ru="—">—</p>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary class="faq__q" data-lt="Kokias vaizdo plokštes taisote?" data-en="Which GPUs do you repair?" data-ru="Какие видеокарты вы ремонтируете?">Kokias vaizdo plokštes taisote?</summary>
+            <p class="faq__a" data-lt="—" data-en="—" data-ru="—">—</p>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary class="faq__q" data-lt="Kokiais būdais galima siųsti vaizdo plokštę?" data-en="How can I send my GPU?" data-ru="Какими способами можно отправить видеокарту?">Kokiais būdais galima siųsti vaizdo plokštę?</summary>
+            <p class="faq__a" data-lt="—" data-en="—" data-ru="—">—</p>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary class="faq__q" data-lt="Ką apima 3 mėnesių garantija?" data-en="What does the 3-month warranty cover?" data-ru="Что включает гарантия 3 месяца?">Ką apima 3 mėnesių garantija?</summary>
+            <p class="faq__a" data-lt="—" data-en="—" data-ru="—">—</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="contact">
+      <div class="container contact__inner" data-reveal>
+        <div class="contact__info">
+          <h2 class="section-title" data-lt="Susisiekite" data-en="Get in touch" data-ru="Свяжитесь с нами">Susisiekite</h2>
+          <p class="contact__sub" data-lt="Turite klausimų ar norite priduoti vaizdo plokštę? Parašykite arba paskambinkite." data-en="Have a question or want to bring in a GPU? Write or call us." data-ru="Есть вопросы или хотите сдать видеокарту? Напишите или позвоните нам.">Turite klausimų ar norite priduoti vaizdo plokštę? Parašykite arba paskambinkite.</p>
+          <div class="contact__details">
+            <button class="contact__detail" id="copyEmail" data-email="info@gpu.lt" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              <span id="copyEmailText">info@gpu.lt</span>
+            </button>
+            <a href="tel:+37061425256" class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 3.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +370 614 25256
+            </a>
+            <div class="contact__detail contact__detail--static">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>I–V 08:00–18:00</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Vardas</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jūsų vardas">
+          </div>
+          <div class="form-group">
+            <label for="email">El. paštas</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jusu@pastas.lt">
+          </div>
+          <div class="form-group">
+            <label for="message">Žinutė</label>
+            <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Aprašykite gedimą ir GPU modelį..."></textarea>
+          </div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+          <button type="submit" class="btn">Siųsti žinutę</button>
+          <p class="form-notice" id="formNotice" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">© 2026 GPU.LT</span>
+      <a href="https://youtube.com/@gpu_lt" target="_blank" rel="noopener" class="footer__yt">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        @gpu_lt
+      </a>
+      <span class="footer__tagline">Vaizdo plokščių remontas Lietuvoje</span>
+    </div>
+    <div class="container footer__address-row">
+      <address class="footer__address">Slyvų g. 29, Sausinės k., Kauno raj. LT-54313 Lietuva</address>
+    </div>
+  </footer>
+
+  <script src="https://vetxx.github.io/gpu.web.design/script.js?v=7"></script>
+</body>
+</html>
