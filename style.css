@@ -519,6 +519,15 @@ img, svg { display: block; }
 
 .contact__detail:hover { color: var(--accent); }
 
+.contact__detail--static {
+  cursor: default;
+  color: var(--muted);
+}
+.contact__detail--static:hover {
+  background: transparent;
+  color: var(--muted);
+}
+
 .contact__detail svg {
   width: 18px;
   height: 18px;
