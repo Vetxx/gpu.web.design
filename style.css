@@ -704,12 +704,15 @@ img, svg { display: block; }
 .work {
   padding: 5rem 0;
   background: var(--surface);
+  text-align: center;
 }
 
 .work__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .video-embed {
