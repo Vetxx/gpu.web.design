@@ -74,36 +74,20 @@ img, svg { display: block; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   text-decoration: none;
-  color: var(--accent);
   flex-shrink: 0;
 }
 
-.logo__icon {
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-}
-
-.logo__divider {
+.logo__img {
+  height: 36px;
+  width: auto;
   display: block;
-  width: 2px;
-  height: 24px;
-  background: var(--accent);
-  border-radius: 1px;
-  flex-shrink: 0;
-  opacity: 0.8;
 }
 
-.logo__text {
-  font-family: 'Chakra Petch', 'Inter', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  line-height: 1;
-}
+.logo__img--dark { display: none; }
+
+[data-theme="dark"] .logo__img--light { display: none; }
+[data-theme="dark"] .logo__img--dark  { display: block; }
 
 .nav__right {
   display: flex;

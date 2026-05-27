@@ -22,8 +22,8 @@
   <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Chakra+Petch:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=22">
   <script>
     (function(){
       var t = localStorage.getItem('theme');
@@ -39,28 +39,8 @@
   <nav class="nav">
     <div class="container nav__inner">
       <a href="#" class="logo">
-        <svg class="logo__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Connecting lines (drawn first, circles sit on top) -->
-          <line x1="12" y1="12" x2="30" y2="12"/>
-          <line x1="30" y1="12" x2="48" y2="12"/>
-          <line x1="12" y1="12" x2="12" y2="30"/>
-          <line x1="12" y1="30" x2="30" y2="30"/>
-          <line x1="12" y1="30" x2="12" y2="48"/>
-          <line x1="30" y1="30" x2="48" y2="48"/>
-          <line x1="30" y1="48" x2="48" y2="48"/>
-          <!-- Grid nodes -->
-          <circle cx="12" cy="12" r="5" fill="var(--nav-bg)"/>
-          <circle cx="30" cy="12" r="5" fill="var(--nav-bg)"/>
-          <circle cx="48" cy="12" r="5" fill="var(--nav-bg)"/>
-          <circle cx="12" cy="30" r="5" fill="var(--nav-bg)"/>
-          <circle cx="30" cy="30" r="5" fill="var(--nav-bg)"/>
-          <circle cx="48" cy="30" r="5" fill="var(--nav-bg)"/>
-          <circle cx="12" cy="48" r="5" fill="var(--nav-bg)"/>
-          <circle cx="30" cy="48" r="5" fill="var(--nav-bg)"/>
-          <circle cx="48" cy="48" r="5" fill="var(--nav-bg)"/>
-        </svg>
-        <span class="logo__divider" aria-hidden="true"></span>
-        <span class="logo__text">GPU.LT</span>
+        <img src="logo-light.png" alt="GPU.LT" class="logo__img logo__img--light" height="36" width="106">
+        <img src="logo-dark.png"  alt="GPU.LT" class="logo__img logo__img--dark"  height="36" width="201" aria-hidden="true">
       </a>
       <div class="nav__right">
         <a href="https://e.gpu.lt" target="_blank" rel="noopener"
