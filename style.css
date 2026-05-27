@@ -621,10 +621,21 @@ img, svg { display: block; }
 }
 
 @media (max-width: 768px) {
-  /* Tighten nav right padding so the moon button sits closer to the
-     screen edge, freeing space between the logo and nav links */
+  /* Tighten nav padding: less edge gap on left, moon button close on right */
   .nav .container {
+    padding-left: 0.75rem;
     padding-right: 0.75rem;
+  }
+
+  /* Slightly larger logo on mobile */
+  .logo__img {
+    height: 40px;
+  }
+
+  /* Compact store button so it doesn't crowd the nav */
+  .nav__store-btn {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
   }
   .hero {
     padding: 3rem 0 2.5rem;
