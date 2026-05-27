@@ -172,6 +172,19 @@ img, svg { display: block; }
 .btn:hover  { background: var(--accent-dark); }
 .btn:active { transform: scale(0.98); }
 
+/* ── Focus-visible (keyboard navigation) ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Form inputs use a custom border+shadow indicator — no double outline */
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+}
+
 /* ── Hero ── */
 .hero {
   padding: 5rem 0 4rem;
@@ -493,8 +506,9 @@ img, svg { display: block; }
 
 /* ── Footer ── */
 .footer {
+  background: var(--surface);
   border-top: 1px solid var(--border);
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 }
 
 .footer__inner {
@@ -511,6 +525,12 @@ img, svg { display: block; }
 
 /* ── Responsive ── */
 @media (max-width: 860px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
   .services__grid {
     grid-template-columns: 1fr;
     max-width: 480px;
