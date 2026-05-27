@@ -22,7 +22,7 @@
   <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20">
   <script>
     (function(){
@@ -39,13 +39,27 @@
   <nav class="nav">
     <div class="container nav__inner">
       <a href="#" class="logo">
-        <svg class="logo__icon" viewBox="0 0 70 44" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="2"  y="0"  width="9"  height="9"  rx="1.5"/>
-          <rect x="14" y="0"  width="9"  height="9"  rx="1.5"/>
-          <rect x="0"  y="8"  width="54" height="22" rx="2"/>
-          <rect x="53" y="8"  width="17" height="22" rx="2"/>
-          <path d="M8 30 H27 V34 H35 V30 H48 V40 H8 Z"/>
+        <svg class="logo__icon" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Connecting lines (drawn first, circles sit on top) -->
+          <line x1="12" y1="12" x2="30" y2="12"/>
+          <line x1="30" y1="12" x2="48" y2="12"/>
+          <line x1="12" y1="12" x2="12" y2="30"/>
+          <line x1="12" y1="30" x2="30" y2="30"/>
+          <line x1="12" y1="30" x2="12" y2="48"/>
+          <line x1="30" y1="30" x2="48" y2="48"/>
+          <line x1="30" y1="48" x2="48" y2="48"/>
+          <!-- Grid nodes -->
+          <circle cx="12" cy="12" r="5" fill="var(--nav-bg)"/>
+          <circle cx="30" cy="12" r="5" fill="var(--nav-bg)"/>
+          <circle cx="48" cy="12" r="5" fill="var(--nav-bg)"/>
+          <circle cx="12" cy="30" r="5" fill="var(--nav-bg)"/>
+          <circle cx="30" cy="30" r="5" fill="var(--nav-bg)"/>
+          <circle cx="48" cy="30" r="5" fill="var(--nav-bg)"/>
+          <circle cx="12" cy="48" r="5" fill="var(--nav-bg)"/>
+          <circle cx="30" cy="48" r="5" fill="var(--nav-bg)"/>
+          <circle cx="48" cy="48" r="5" fill="var(--nav-bg)"/>
         </svg>
+        <span class="logo__divider" aria-hidden="true"></span>
         <span class="logo__text">GPU.LT</span>
       </a>
       <div class="nav__right">
