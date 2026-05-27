@@ -505,6 +505,7 @@ img, svg { display: block; }
 .form-notice.error   { color: #DC2626; }
 
 /* ── Footer ── */
+/* bump: style.css v18 */
 .footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
