@@ -158,6 +158,14 @@ img, svg { display: block; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
 }
 
+/* ── Scroll offset: compensate for sticky nav (64px) ── */
+#services,
+#work,
+#faq,
+#contact {
+  scroll-margin-top: 72px;
+}
+
 /* ── Shared section styles ── */
 .section-title {
   font-size: clamp(1.625rem, 3vw, 2.125rem);
