@@ -639,7 +639,6 @@ img, svg { display: block; }
 
   /* Compact store button so it doesn't crowd the nav */
   .nav__store-btn {
-    font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
   }
   .hero {
