@@ -627,9 +627,9 @@ img, svg { display: block; }
     padding-right: 0.75rem;
   }
 
-  /* Slightly larger logo on mobile */
+  /* Larger logo on mobile */
   .logo__img {
-    height: 40px;
+    height: 48px;
   }
 
   /* Tighten gap between nav items so spacing looks even across the bar */
