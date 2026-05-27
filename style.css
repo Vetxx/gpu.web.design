@@ -632,6 +632,11 @@ img, svg { display: block; }
     height: 40px;
   }
 
+  /* Tighten gap between nav items so spacing looks even across the bar */
+  .nav__right {
+    gap: 0.5rem;
+  }
+
   /* Compact store button so it doesn't crowd the nav */
   .nav__store-btn {
     font-size: 0.875rem;
